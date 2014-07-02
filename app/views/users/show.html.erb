@@ -1,0 +1,38 @@
+<h1>User #<%= @user.id %></h1>
+
+<div>
+  <strong>Name</strong>:<br />
+  <p><%= @user.name %></p>
+</div>
+<div>
+  <strong>Email</strong>:<br />
+  <p><%= @user.email %></p>
+</div>
+<a href="/users/<%= @user.id %>/edit">Edit</a> |
+<a href="/users/<%= @user.id %>/destroy">Destroy</a>
+<h1>New Bookmark</h1>
+
+<form action="/create_bookmark">
+  <div>
+    <label for="name">name</label><br />
+    <input id="name" name="name" type="text" />
+  </div>
+  <div>
+    <label for="url">url</label><br />
+    <input id="url" name="url" type="text" />
+  </div>
+  <div>
+    <label for="description">description</label><br />
+    <input id="description" name="description" type="text" />
+  </div>
+  <div>
+    <label for="user_id">user_id</label><br />
+    <input id="user_id" name="user_id" type="text" value="<%= @user.id %>"/>
+  </div>
+  <div>
+    <input type="submit">
+  </div>
+</form>
+
+
+

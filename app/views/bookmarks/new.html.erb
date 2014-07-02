@@ -1,0 +1,31 @@
+
+<h1>Are you an existing User?</h1>
+
+<h1>Click Edit to make a new bookmark</h1>
+
+<p><a href="/new_user">Or Add a New User if you haven't made an account</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td><a href="/users/<%= user.id %>">Show</a>
+        </td>
+      <td><a href="/users/<%= user.id %>/edit">Edit</a></td>
+      <td><a href="/users/<%= user.id %>/destroy">Destroy</a></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
