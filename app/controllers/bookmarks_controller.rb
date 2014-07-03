@@ -6,6 +6,7 @@ class BookmarksController < ApplicationController
 
   def show
     @bookmark = Bookmark.find_by(id: params[:id])
+    @user = User.find_by(id: params[:id])
   end
 
   def new
@@ -28,6 +29,7 @@ class BookmarksController < ApplicationController
 
   def edit
     @bookmark = Bookmark.find_by(id: params[:id])
+    @user = User.find_by(id: params[:id])
   end
 
   def update
